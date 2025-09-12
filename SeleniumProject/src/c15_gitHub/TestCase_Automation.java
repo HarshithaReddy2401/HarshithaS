@@ -8,9 +8,9 @@ public class TestCase_Automation {
     public static void main(String[] args) {
         testScriptOne();
     }
-    public static void testScriptOne(){
+    public static void testScriptOne() {
         WebDriver oBrowser = null;
-        try{
+        try {
             //1. Open browser
             oBrowser = new ChromeDriver();
             oBrowser.manage().window().maximize();
@@ -28,12 +28,12 @@ public class TestCase_Automation {
             Thread.sleep(2000);
 
             //5. Verify login is successful
-            if(oBrowser.findElement(By.xpath("//input[@id='SubmitTTButton']")).isDisplayed()){
+            if (oBrowser.findElement(By.xpath("//input[@id='SubmitTTButton']")).isDisplayed()) {
                 System.out.println("Login to actiTime is successful");
-                if(oBrowser.findElements(By.xpath("//div[@style='display: block;']")).size() > 0){
+                if (oBrowser.findElements(By.xpath("//div[@style='display: block;']")).size() > 0) {
                     oBrowser.findElement(By.id("gettingStartedShortcutsMenuCloseId")).click();
                 }
-            }else{
+            } else {
                 System.out.println("Failed to login to actiTime");
                 return;
             }
@@ -42,26 +42,23 @@ public class TestCase_Automation {
             oBrowser.findElement(By.xpath("//a[@id='logoutLink']")).click();
             Thread.sleep(2000);
 
-            if(oBrowser.getCurrentUrl().equals("http://localhost/login.do")
+            if (oBrowser.getCurrentUrl().equals("http://localhost/login.do")
                     && oBrowser.getTitle().equals("actiTIME - Login")
-                    && oBrowser.findElement(By.xpath("//img[contains(@src, 'timer.png')]")).isDisplayed()){
+                    && oBrowser.findElement(By.xpath("//img[contains(@src, 'timer.png')]")).isDisplayed()) {
                 System.out.println("logout from actiTime is successful");
-                System.out.println("----------------------------");
-            }else{
+                System.out.println("--------------------------");
+                System.out.println("--------------------------");
+            } else {
                 System.out.println("Failed to logout from actiTime");
             }
 
-
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             //7. close the browser
             oBrowser.close();
 
             oBrowser = null;
         }
     }
-
-
 }
