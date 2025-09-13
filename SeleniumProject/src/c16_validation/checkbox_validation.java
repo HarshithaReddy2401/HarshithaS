@@ -68,6 +68,7 @@ public class checkbox_validation {
             oEles.get(1).click();
             if(oEles.get(1).isSelected()) System.out.println("Second checkbox is selected");
             else System.out.println("Failed to select the second checkbox");
+            System.out.println("-------------------");
             Thread.sleep(2000);
         }catch(Exception e){
             e.printStackTrace();
