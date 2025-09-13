@@ -16,7 +16,7 @@ public class Button_Validations {
         try{
             oBrowser = new ChromeDriver();
             oBrowser.manage().window().maximize();
-            oBrowser.navigate().to("file:///E:/MorningBatch_Combined/HTML/Webpage/SampleWebPage.html");
+            oBrowser.navigate().to("file:///D:/HTML/SampleWebProject.html");
             Thread.sleep(2000);
 
             //1. Exist Or not?

@@ -56,7 +56,6 @@ public class TestCase_Automation {
         } finally {
             //7. close the browser
             oBrowser.close();
-
             oBrowser = null;
         }
     }
