@@ -62,7 +62,6 @@ public class Button_Validations {
             System.out.println(oEle.getCssValue("color"));
             System.out.println(oEle.getCssValue("font-size"));
             System.out.println(oEle.getCssValue("font-family"));
-            System.out.println("-------------------");
 
 
             //7. enabled/disabled
