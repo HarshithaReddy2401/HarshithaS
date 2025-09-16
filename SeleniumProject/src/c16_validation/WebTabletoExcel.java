@@ -1,6 +1,5 @@
 package c16_validation;
 
-import com.google.common.collect.Table;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -51,7 +50,7 @@ public class WebTabletoExcel {
                 }
             }
 
-            fout = new FileOutputStream("C:\\Users\\USER\\Documents\\StudentDetails.xlsx");
+            fout = new FileOutputStream("D:\\Morning\\CoreJava\\StudentDetails.xlsx");
             wb.write(fout);
         }catch(Exception e){
             e.printStackTrace();
