@@ -1,18 +1,23 @@
-package c19_scripting3_propFile;
+package c19_scriting3_ExcelFile;
 
+import c19_scripting3_propFile.ReusableMethods;
 import org.openqa.selenium.WebDriver;
 import java.util.Map;
 
-public class TestScript extends ReusableMethods{
+import static c19_scriting3_ExcelFile.ResusableMethods.getExcelData;
+
+
+public class TestScript extends ReusableMethods {
     public static void main(String[] args) {
         TS_LoginLogout();
         TS_createAndDeleteUser();
     }
+
     public static void TS_LoginLogout() {
         WebDriver oBrowser = null;
         Map<String, String> data = null;
         try {
-            data = getPropData("TestData");
+            data = getExcelData("TestData", "testData", "TC_ID_001");
             oBrowser = launchBrowser(data.get("browserName"));
             boolean blnRes = navigateURL(oBrowser, data.get("url"));
             blnRes = loginToApplication(oBrowser, data.get("userName") , data.get("password"));
@@ -30,7 +35,7 @@ public class TestScript extends ReusableMethods{
         WebDriver oBrowser = null;
         Map<String, String> data = null;
         try {
-            data = getPropData("TestData");
+            data = getExcelData("TestData","testData","TC_ID_002");
             oBrowser = launchBrowser(data.get("browserName"));
             boolean blnRes = navigateURL(oBrowser, data.get("url"));
             blnRes = loginToApplication(oBrowser, data.get("userName") , data.get("password"));
@@ -46,3 +51,4 @@ public class TestScript extends ReusableMethods{
         }
     }
 }
+
